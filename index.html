@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>松下投影机市场拓展分析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .section-card { background: white; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); padding: 24px; margin-bottom: 24px; }
+        .section-title { color: #2d3748; font-size: 1.5rem; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .section-title i { color: #0071e3; }
+        .chart-container { position: relative; height: 300px; width: 100%; margin: 16px 0; }
+        .kpi-card { background: #f8f9fa; border-radius: 8px; padding: 16px; margin: 8px; flex: 1; min-width: 200px; }
+        .kpi-title { color: #4a5568; font-size: 0.9rem; margin-bottom: 4px; }
+        .kpi-value { color: #2d3748; font-size: 1.4rem; font-weight: 600; }
+        .tag { display: inline-block; padding: 4px 8px; border-radius: 16px; font-size: 0.75rem; margin-right: 6px; margin-bottom: 6px; }
+        .tag-primary { background: #e8f4f8; color: #0071e3; }
+        .tag-success { background: #eaf6fa; color: #34c759; }
+        .tag-warning { background: #fef7fb; color: #ff9500; }
+        .sub-section { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0; }
+        .sub-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .feature-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .feature-icon { width: 24px; height: 24px; border-radius: 50%; background: #e8f4f8; color: #0071e3; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- 封面区域 -->
+        <div class="section-card text-center mb-12">
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">松下投影机市场拓展分析</h1>
+            <p class="text-gray-600">实习生汇报 | 宏观经济视角下的渠道策略与ToC端创新</p>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <span class="tag tag-primary">宏观经济</span>
+                <span class="tag tag-primary">渠道优化</span>
+                <span class="tag tag-primary">代理协同</span>
+                <span class="tag tag-primary">ToC拓展</span>
+                <span class="tag tag-primary">细分市场</span>
+                <span class="tag tag-primary">品牌曝光</span>
+            </div>
+        </div>
+
+        <!-- 第一部分：宏观经济与行业现状 -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-chart-line"></i>宏观经济与行业现状</h2>
+            
+            <div class="sub-section">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">经济运行核心数据</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="kpi-card">
+                        <div class="kpi-title">2025前三季度GDP增速</div>
+                        <div class="kpi-value">5.2%</div>
+                        <p class="text-gray-400 text-xs mt-1">Q1:5.4% | Q2:5.2% | Q3:4.8% <br>数据来源：国家统计局</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">全球投影机出货量（上半年）</div>
+                        <div class="kpi-value">900.3万台</div>
+                        <p class="text-gray-400 text-xs mt-1">同比下滑4.2% <br>数据来源：洛图科技(RUNTO)</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">全球投影机销售额（上半年）</div>
+                        <div class="kpi-value">40.5亿美元</div>
+                        <p class="text-gray-400 text-xs mt-1">同比跌幅8.6% <br>数据来源：洛图科技(RUNTO)</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">居民人均消费支出</div>
+                        <div class="kpi-value">2.16万元</div>
+                        <p class="text-gray-400 text-xs mt-1">同比增长4.6%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">消费市场结构性特征</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-green-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-arrow-up"></i>增长领域
+                                </h4>
+                                <ul class="space-y-2 text-gray-600 pl-6 mt-2 list-disc">
+                                    <li>文体休闲服务零售额两位数增长</li>
+                                    <li>通讯信息服务消费持续活跃</li>
+                                    <li>旅游咨询租赁服务需求上升</li>
+                                    <li>交通出行服务市场稳步复苏</li>
+                                    <li>最终消费对经济贡献率53.5%</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-orange-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-arrow-down"></i>承压领域
+                                </h4>
+                                <ul class="space-y-2 text-gray-600 pl-6 mt-2 list-disc">
+                                    <li>智能投影等非刚需可选消费品</li>
+                                    <li>消费者预算分配更趋谨慎</li>
+                                    <li>购买决策周期明显延长</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">GDP增速与投影机市场表现</h3>
+                        <div class="chart-container">
+                            <canvas id="macroChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二部分：核心渠道策略 -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-road-spikes"></i>核心渠道策略：巩固线下，主抓线上</h2>
+            
+            <div class="sub-section">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">策略核心逻辑</h3>
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                    <p class="text-gray-700">顺应经济发展趋势，不依赖单一渠道，通过"线下巩固基本盘+线上拓展新增量"的双轮驱动模式，结合松下品牌口碑与质量优势，实现市场突破。</p>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">线下渠道巩固措施</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-store text-indigo-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">维护核心线下客户</h4>
+                                    <p class="text-gray-600 text-sm">重点服务教育机构、大型企业等稳定采购客户，提供定制化解决方案</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-handshake text-purple-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">深化线下合作粘性</h4>
+                                    <p class="text-gray-600 text-sm">通过完善的售后、集成服务，提升客户满意度与复购率</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-map-location-dot text-teal-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">拓展本地化资源</h4>
+                                    <p class="text-gray-600 text-sm">依托代理渠道的本地资源，渗透区域中小客户市场</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">线上渠道突破方向</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-globe text-red-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">全平台覆盖</h4>
+                                    <p class="text-gray-600 text-sm">布局主流电商平台，优化搜索排位、榜单展示，跟进国补以旧换新窗口</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-content-writing text-pink-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">内容矩阵构建</h4>
+                                    <p class="text-gray-600 text-sm">差异化运营抖音/视频号/知乎/小红书，实现"视觉冲击+深度种草"双重效果</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-users text-yellow-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">用户自发传播</h4>
+                                    <p class="text-gray-600 text-sm">通过话题活动、点赞兑换等激励机制，调动已购用户分享积极性</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">线上代理量化KPI体系</h3>
+                <div class="flex flex-wrap">
+                    <div class="kpi-card">
+                        <div class="kpi-title">平台运营指标</div>
+                        <div class="kpi-value">流量+转化</div>
+                        <p class="text-gray-400 text-xs mt-1">搜索排位Top10/榜单入围</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">内容产出指标</div>
+                        <div class="kpi-value">周度更新</div>
+                        <p class="text-gray-400 text-xs mt-1">各平台差异化内容</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">用户传播指标</div>
+                        <div class="kpi-value">话题参与量</div>
+                        <p class="text-gray-400 text-xs mt-1">#松下投影真实体验</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">达人合作指标</div>
+                        <div class="kpi-value">月度产出</div>
+                        <p class="text-gray-400 text-xs mt-1">KOL测评+KOC种草</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">竞品监控指标</div>
+                        <div class="kpi-value">双周报告</div>
+                        <p class="text-gray-400 text-xs mt-1">价格/新品/活动跟踪</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">政策跟进指标</div>
+                        <div class="kpi-value">100%响应</div>
+                        <p class="text-gray-400 text-xs mt-1">国补/补贴及时申报</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">KOL/KOC合作细分布局</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="border rounded-lg p-4">
+                        <h4 class="font-medium text-gray-800 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-yellow-400"></i>头部KOL破圈
+                        </h4>
+                        <div class="space-y-2 text-gray-600 text-sm">
+                            <p>• 数码测评博主（如"影视飓风"）：专业性能测评</p>
+                            <p>• 科技类达人：新品首发体验</p>
+                            <p>• 目标：提升品牌知名度与行业影响力</p>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg p-4">
+                        <h4 class="font-medium text-gray-800 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-user-group text-blue-400"></i>垂直KOC渗透
+                        </h4>
+                        <div class="space-y-2 text-gray-600 text-sm">
+                            <p>• 商务领域："企业行政人""会议策划师"场景分享</p>
+                            <p>• 教育领域："中小学电教老师"实拍演示</p>
+                            <p>• 目标：增强B端用户信任与转化</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第三部分：细分市场发展态势 -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i>细分市场发展态势</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border border-green-100 rounded-lg p-6 bg-green-50">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold text-green-800">教育市场</h3>
+                        <span class="tag tag-success">稳健增长</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-school"></i></div>
+                        <span class="text-gray-600 text-sm">《教育信息化2.0行动计划》政策驱动</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-target"></i></div>
+                        <span class="text-gray-600 text-sm">中小学多媒体教室覆盖率目标98%+</span>
+                    </div>
+                    <div class="mt-4 text-green-700 font-bold text-2xl mb-2">800亿元+</div>
+                    <p class="text-gray-500 text-sm">2025年智慧教室建设投入规模</p>
+                    <div class="mt-4 bg-white rounded-lg p-3">
+                        <p class="text-gray-600 text-sm font-medium">核心需求</p>
+                        <p class="text-gray-500 text-xs mt-1">高亮度、高稳定性、易维护的教育专用机型</p>
+                    </div>
+                </div>
+                <div class="border border-blue-100 rounded-lg p-6 bg-blue-50">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold text-blue-800">商务市场</h3>
+                        <span class="tag tag-primary">潜力犹存</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <span class="text-gray-600 text-sm">中高端产品需求占比持续提升</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <span class="text-gray-600 text-sm">6000-8000流明段产品占比超60%</span>
+                    </div>
+                    <div class="mt-4 text-blue-700 font-bold text-2xl mb-2">12%+</div>
+                    <p class="text-gray-500 text-sm">中高端商务机型年均复合增长率</p>
+                    <div class="mt-4 bg-white rounded-lg p-3">
+                        <p class="text-gray-600 text-sm font-medium">核心需求</p>
+                        <p class="text-gray-500 text-xs mt-1">高清显示、快速投屏、适配会议室复杂环境</p>
+                    </div>
+                </div>
+                <div class="border border-orange-100 rounded-lg p-6 bg-orange-50">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold text-orange-800">家用市场</h3>
+                        <span class="tag tag-warning">面临压力</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                        <span class="text-gray-600 text-sm">非刚需属性导致消费意愿收紧</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-tv"></i></div>
+                        <span class="text-gray-600 text-sm">大尺寸电视价格下探加剧竞争</span>
+                    </div>
+                    <div class="mt-4 text-orange-700 font-bold text-2xl mb-2">高潜力</div>
+                    <p class="text-gray-500 text-sm">松下品牌市场占有率提升空间大</p>
+                    <div class="mt-4 bg-white rounded-lg p-3">
+                        <p class="text-gray-600 text-sm font-medium">核心需求</p>
+                        <p class="text-gray-500 text-xs mt-1">便携性、高画质、高性价比、智能交互</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第四部分：资源协同与团队建设 -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-people-arrows"></i>资源协同与团队建设</h2>
+            
+            <div class="sub-section">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">一体化团队合作理念</h3>
+                <p class="text-gray-600 mb-6">打破企业内部团队与代理合作伙伴"各自为战"的局面，树立资源互补、优势叠加的合作模式，提升整体市场竞争力。</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-3">内部资源支撑</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-shield-halved text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">依托松下技术底蕴，提供完善的售后与集成服务</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-file-invoice text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">标准化安装调试、季度维护等服务流程支持</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-sitemap text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">跨部门项目协作，提供技术、营销等资源调配</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-award text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">强化品牌背书，突出高端、质量保证的品牌形象</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-3">外部资源整合</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-landmark text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">对接《视听电子产业高质量发展指导意见》政策支持</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-lightbulb text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">申请技术创新扶持资金与相关补贴</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-network-wired text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">借助代理渠道的本地化市场资源与客户网络</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-handshake-angle text-gray-400 mt-1"></i>
+                                <span class="text-gray-600">政企合作、政府采购项目的联合申报与执行</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">团队建设核心方向</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 rounded-lg p-4 border">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-brain text-blue-500"></i>
+                            <h4 class="font-medium text-gray-800">理念统一</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">强化"一体化团队"认知，明确共同目标</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 border">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-comments text-green-500"></i>
+                            <h4 class="font-medium text-gray-800">高效沟通</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">建立定期沟通机制，及时同步信息与反馈</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 border">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-rocket text-purple-500"></i>
+                            <h4 class="font-medium text-gray-800">活力激发</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">通过目标激励、成果共享提升团队干劲</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第五部分：ToC端优化方案 -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-bullseye"></i>ToC端优化：定位、画像与创新方案</h2>
+            
+            <div class="sub-section">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">产品定位与用户画像构建</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-2">第一步：明确产品定位</h4>
+                                <div class="bg-blue-50 rounded-lg p-3 text-gray-600 text-sm">
+                                    结合现有产品特性，采用"主定位+辅定位"模式：以教育+商务市场为核心主定位，兼顾年轻家用群体为辅定位，形成差异化竞争优势。
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-2">第二步：勾勒核心用户画像</h4>
+                                <div class="space-y-2 text-gray-600">
+                                    <p>• 核心群体1：30-45岁商务人群（企业行政、会议策划师）</p>
+                                    <p>• 核心群体2：25-55岁教育工作者（中小学电教老师、培训机构负责人）</p>
+                                    <p>• 核心群体3：25-35岁年轻家用群体（租房青年、新婚家庭、影音爱好者）</p>
+                                    <p>• 核心群体4：中小企业采购负责人（关注性价比与稳定性）</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-2">第三步：挖掘潜在用户群体</h4>
+                                <div class="space-y-2 text-gray-600">
+                                    <p>• 商务投影潜在用户：中小型培训机构、创业公司</p>
+                                    <p>• 家用投影潜在用户：露营爱好者、民宿经营者、学生群体</p>
+                                    <p>• 教育投影潜在用户：民办学校、课外辅导机构、社区教育中心</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">核心用户群体分布</h3>
+                        <div class="chart-container">
+                            <canvas id="userPortraitChart"></canvas>
+                        </div>
+                        
+                        <h4 class="font-medium text-gray-800 mt-6 mb-3">创新合作方案方向</h4>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg p-3">
+                                <h5 class="font-medium text-gray-800 text-sm">培训机构专属方案</h5>
+                                <p class="text-gray-600 text-xs mt-1">"安装调试+季度维护+耗材更换"一体化服务套餐，降低运营成本</p>
+                            </div>
+                            <div class="border rounded-lg p-3">
+                                <h5 class="font-medium text-gray-800 text-sm">年轻租房群体方案</h5>
+                                <p class="text-gray-600 text-xs mt-1">"以旧换新+分期免息+便携收纳包"组合优惠，降低消费门槛</p>
+                            </div>
+                            <div class="border rounded-lg p-3">
+                                <h5 class="font-medium text-gray-800 text-sm">家装场景定制方案</h5>
+                                <p class="text-gray-600 text-xs mt-1">"投影+幕布+安装+预埋线路设计"场景化套餐，提升使用体验</p>
+                            </div>
+                            <div class="border rounded-lg p-3">
+                                <h5 class="font-medium text-gray-800 text-sm">中小企业采购方案</h5>
+                                <p class="text-gray-600 text-xs mt-1">"批量采购折扣+免费培训+2年延保"组合政策，增强性价比</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心结论 -->
+        <div class="section-card bg-blue-50 border border-blue-100">
+            <h2 class="section-title"><i class="fa-solid fa-flag-checkered"></i>核心结论</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-gray-700">
+                <div class="flex flex-col items-center text-center p-4">
+                    <i class="fa-solid fa-compass text-blue-500 text-3xl mb-3"></i>
+                    <h3 class="font-semibold mb-2">顺应大势</h3>
+                    <p class="text-sm">把握经济结构性机遇，聚焦增长领域，规避市场风险</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4">
+                    <i class="fa-solid fa-users-gear text-blue-500 text-3xl mb-3"></i>
+                    <h3 class="font-semibold mb-2">协同共赢</h3>
+                    <p class="text-sm">强化内外一体化合作，通过资源互补提升整体效能</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4">
+                    <i class="fa-solid fa-bullseye text-blue-500 text-3xl mb-3"></i>
+                    <h3 class="font-semibold mb-2">精准发力</h3>
+                    <p class="text-sm">明确产品定位与用户画像，实现精准营销与市场突破</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4">
+                    <i class="fa-solid fa-lightbulb text-blue-500 text-3xl mb-3"></i>
+                    <h3 class="font-semibold mb-2">创新驱动</h3>
+                    <p class="text-sm">以渠道创新、产品创新、服务创新拓展增长空间</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 宏观经济与行业数据图表
+        const macroCtx = document.getElementById('macroChart').getContext('2d');
+        new Chart(macroCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Q1 GDP增速', 'Q2 GDP增速', 'Q3 GDP增速', '投影机出货量增速', '投影机销售额增速'],
+                datasets: [{
+                    label: '同比增长率（%）',
+                    data: [5.4, 5.2, 4.8, -4.2, -8.6],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.6)',
+                        'rgba(59, 130, 246, 0.6)',
+                        'rgba(59, 130, 246, 0.6)',
+                        'rgba(249, 115, 22, 0.6)',
+                        'rgba(239, 68, 68, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(249, 115, 22, 1)',
+                        'rgba(239, 68, 68, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.raw + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 用户画像图表
+        const userPortraitCtx = document.getElementById('userPortraitChart').getContext('2d');
+        new Chart(userPortraitCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['30-45岁商务人群', '教育工作者', '25-35岁家用群体', '中小企业采购', '其他'],
+                datasets: [{
+                    data: [35, 25, 20, 15, 5],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(34, 197, 94, 0.7)',
+                        'rgba(249, 115, 22, 0.7)',
+                        'rgba(168, 85, 247, 0.7)',
+                        'rgba(107, 114, 128, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(34, 197, 94, 1)',
+                        'rgba(249, 115, 22, 1)',
+                        'rgba(168, 85, 247, 1)',
+                        'rgba(107, 114, 128, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 12,
+                            padding: 15
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: '核心用户群体分布',
+                        font: { size: 14 },
+                        padding: { bottom: 20 }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
